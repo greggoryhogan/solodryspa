@@ -7,13 +7,13 @@
   <title>Solo Dry Spa | Coming Soon</title>
   <link rel="preconnect" href="https://use.typekit.net" crossorigin>
   <link rel="stylesheet" href="https://use.typekit.net/pzx0ris.css">
-  <link rel="stylesheet" href="style.css?v=1.0.1">
+  <link rel="stylesheet" href="style.css?v=1.0.2">
   <link media="(prefers-color-scheme: light)" href="img/fav-light.png" rel="icon" type="image/x-icon" />
   <link media="(prefers-color-scheme: dark)" href="img/fav-dark.png" rel="icon" type="image/x-icon" />
   <meta property="og:title" content="SOLO Dry Spa | Coming Soon">
   <meta property="og:description" content="A modern healing studio offering innovative wellness">
-  <meta property="og:image" content="https://henryracingteam.com/img/share.jpg">
-  <meta property="og:url" content="https://henryracingteam.com/">
+  <meta property="og:image" content="https://solodryspa.com/img/share.jpg">
+  <meta property="og:url" content="https://solodryspa.com//">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SOLO Dry Spa">
   <meta property="og:locale" content="en_US">
@@ -25,7 +25,7 @@
 <body>
   <header id="hrt-header">
     <div class="container">
-      <a href="https://henryracingteam.com/" title="Home" class="logo">
+      <a href="https://solodryspa.com/" title="Home" class="logo">
         <h1>
           <span>SOLO Dry Spa</span>
           <!--<img src="img/solo-spin.png" alt="SOLO Dry Spa Logo Image" width="273" height="83" class="solo-animate fade-in is-inactive" />
@@ -49,31 +49,82 @@
     <section class="container solo-animate slide-in-bottom is-inactive" data-animation-delay="1200"> 
         <p class="text-center"><strong>COMING TO NEWBURYPORT NOVEMBER 2026</strong></p>
         <p class="text-center fs-smaller"><em>Join our waitlist to be the first to know when we open.</em></p>
-        <div id="mc_embed_shell">
-  
-<div id="mc_embed_signup">
-    <form action="https://solodryspa.us20.list-manage.com/subscribe/post?u=3e5a9856682ea90ff75eeba0c&amp;id=14aac10992&amp;f_id=00ce79e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self">
-        <div id="mc_embed_signup_scroll"><h2></h2>
-            <div class="mc-field-group"><!--<label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>-->
-              <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Your email" value="" required></div>
-        <div id="mce-responses" class="clear foot">
-            <div class="response" id="mce-error-response" style="display: none;"></div>
-            <div class="response" id="mce-success-response" style="display: none;"></div>
+      
+        <div id="mc_embed_signup">
+    <form id="mc-embedded-subscribe-form" class="mc_container">
+      <div class="mc-field-group">
+        <input
+            type="email"
+            name="EMAIL"
+            id="mce-EMAIL"
+            placeholder="Your email"
+            required
+            class=""
+        >
         </div>
-    <div style="position: absolute; left: -5000px;" aria-hidden="true">
-        /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
-        <input type="text" name="b_3e5a9856682ea90ff75eeba0c_14aac10992" tabindex="-1" value="">
-    </div>
-        <div class="optionalParent">
-            <div class="clear foot">
-                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Join the waitlist">
-                
-            </div>
+        <!-- Mailchimp honeypot - leave this -->
+        <div style="position:absolute;left:-5000px;" aria-hidden="true">
+            <input
+                type="text"
+                name="b_3e5a9856682ea90ff75eeba0c_14aac10992"
+                tabindex="-1"
+                value=""
+            >
         </div>
-    </div>
-</form>
+
+        <button type="submit" id="mc-embedded-subscribe">
+            JOIN THE WAITLIST
+        </button>
+
+        <div id="mce-response"></div>
+    </form>
 </div>
-</div>
+
+<script>
+document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const form = this;
+    const response = document.getElementById('mce-response');
+    const button = document.getElementById('mc-embedded-subscribe');
+
+    const callback = 'mcCallback_' + Date.now();
+
+    const params = new URLSearchParams(new FormData(form));
+
+    params.set('u', '3e5a9856682ea90ff75eeba0c');
+    params.set('id', '14aac10992');
+    params.set('f_id', '00ce79e0f0');
+    params.set('c', callback);
+
+    button.disabled = true;
+
+    window[callback] = function(data) {
+        if (data.result === 'success') {
+            response.textContent = 'Thank you for subscribing to our waitlist!';
+            form.querySelector('#mce-EMAIL').value = '';
+        } else {
+            // Mailchimp sometimes includes an HTML link in its error,
+            // so strip it down to plain text.
+            const temp = document.createElement('div');
+            temp.innerHTML = data.msg;
+            response.textContent = temp.textContent;
+        }
+
+        button.disabled = false;
+        script.remove();
+        delete window[callback];
+    };
+
+    const script = document.createElement('script');
+
+    script.src =
+        'https://solodryspa.us20.list-manage.com/subscribe/post-json?' +
+        params.toString();
+
+    document.body.appendChild(script);
+});
+</script>
 
 
     </section>
@@ -180,5 +231,6 @@
       });
     })();
   </script>
+  
 </body>
 </html>
