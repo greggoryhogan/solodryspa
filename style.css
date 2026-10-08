@@ -415,6 +415,12 @@ main section {
         font-size: 2.5rem;
         line-height: 3rem;
     }
+    main section {
+        padding: 1.5rem 0 0;
+    }
+    .padding-top-md {
+        padding-top: 3rem;
+    }
     
 }
 
