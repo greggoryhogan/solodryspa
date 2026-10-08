@@ -421,7 +421,9 @@ main section {
     .padding-top-md {
         padding-top: 3rem;
     }
-    
+    header .logo h1 {
+        margin: 1rem 0;
+    }
 }
 
 /*@media (prefers-color-scheme: light) {
