@@ -424,6 +424,9 @@ main section {
     header .logo h1 {
         margin: 1rem 0;
     }
+    ul.margin-top {
+        margin-top: 2rem;
+    }
 }
 
 /*@media (prefers-color-scheme: light) {
