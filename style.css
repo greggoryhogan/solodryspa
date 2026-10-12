@@ -173,6 +173,7 @@ main {
     font-weight: 400;
     z-index: 1;
     background: #040406;
+    letter-spacing: 2px;
 }
 .offering-grid img {
     position: absolute;
